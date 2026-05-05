@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  agent:
+    build: .
+    container_name: email-agent
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.json:/app/token.json
+      - ./signature.png:/app/signature.png:ro
+      - ./data:/app/data
+      - ./knowledge_base:/app/knowledge_base:ro
+
+  dashboard:
+    build: .
+    container_name: email-agent-dashboard
+    restart: unless-stopped
+    command: uvicorn analytics.dashboard:app --host 0.0.0.0 --port 8000
+    env_file: .env
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "8000:8000"
+    depends_on:
+      - agent

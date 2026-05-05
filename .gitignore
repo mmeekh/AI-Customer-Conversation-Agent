@@ -1,8 +1,30 @@
-venv/
-__pycache__/
-*.pyc
+# Secrets
 .env
-conversations.db
-token.json
 credentials.json
-bot.log
+token.json
+*.pem
+*.key
+
+# Data
+data/
+*.db
+*.sqlite
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
