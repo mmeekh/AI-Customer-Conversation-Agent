@@ -2,12 +2,14 @@
 
 > **Multi-channel autonomous agent** that reads, classifies, remembers, and replies to customer messages across Gmail and Intercom — with vector memory, RAG-powered knowledge base, sentiment-driven escalation, and a live analytics dashboard.
 
-Built on the Gmail API, Intercom REST API, and Google Gemini, this is a production-style implementation of an LLM agent that goes beyond a simple "reply bot": it classifies intent, scores sentiment, retrieves grounding from a markdown knowledge base, persists long-term memory in a vector store, and escalates to humans when the conversation needs it.
+Built on the Gmail API, Intercom REST API, and Google Gemini, this project goes beyond a simple "reply bot": it classifies intent, scores sentiment, retrieves grounding from a markdown knowledge base, persists long-term memory in a vector store, and escalates to humans when the conversation needs it.
+
+The architecture is production-ready — containerized, channel-pluggable, with separated concerns for memory, retrieval, and analytics. It currently runs as a personal automation; the screenshot below is from the live analytics dashboard backed by anonymized event data.
 
 <p align="center">
   <img src="docs/screenshot.webp" alt="Live analytics dashboard — message volume, escalation rate, sentiment, intent breakdown" width="900">
   <br>
-  <sub>Live analytics dashboard: message volume, escalation rate, sentiment trend, and intent breakdown.</sub>
+  <sub>Analytics dashboard: message volume, escalation rate, sentiment trend, and intent breakdown.</sub>
 </p>
 
 ---
@@ -231,4 +233,16 @@ pytest -q
 
 ---
 
-Built by [Muhammet Emin Kilic](https://linkedin.com/in/emin-kilic-250b14210)
+## Why I built this
+
+Coming from a finance and reporting background — VBA macros at BL Harbert, Power BI dashboards at Acun Media — I kept noticing the same pattern: a huge percentage of "knowledge work" is repetitive triage. Reading an email, deciding what kind of email it is, pulling up the right answer, writing back, and flagging the hard ones to a human.
+
+That entire loop is automatable. This project is the proof.
+
+It is the natural next step after spreadsheet-era automation: the same instinct ("this manual workflow shouldn't exist"), applied to LLM-era tooling. Intent classification replaces the human triage step, vector memory replaces the "where did we discuss this before?" search, and sentiment-driven escalation makes sure the loop never silently fails on the message that actually mattered.
+
+Built as a portfolio piece — but designed like something I would actually deploy.
+
+---
+
+Built by [Muhammet Emin Kilic](https://linkedin.com/in/emin-kilic-250b14210) — Finance-Tech Hybrid, Istanbul.
