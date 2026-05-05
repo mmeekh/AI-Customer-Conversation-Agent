@@ -4,6 +4,12 @@
 
 Built on the Gmail API, Intercom REST API, and Google Gemini, this is a production-style implementation of an LLM agent that goes beyond a simple "reply bot": it classifies intent, scores sentiment, retrieves grounding from a markdown knowledge base, persists long-term memory in a vector store, and escalates to humans when the conversation needs it.
 
+<p align="center">
+  <img src="docs/screenshot.webp" alt="Live analytics dashboard — message volume, escalation rate, sentiment, intent breakdown" width="900">
+  <br>
+  <sub>Live analytics dashboard: message volume, escalation rate, sentiment trend, and intent breakdown.</sub>
+</p>
+
 ---
 
 ## Highlights
