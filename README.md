@@ -9,12 +9,12 @@ The architecture is production-ready — containerized, channel-pluggable, with 
 <table align="center">
   <tr>
     <td align="center" width="70%">
-      <img src="docs/screenshot.webp" alt="AI Customer Agent — analytics dashboard, desktop">
-      <br><sub><b>Desktop</b> — message volume, escalation rate, sentiment, intent breakdown</sub>
+      <img src="docs/screenshot.webp" alt="AI Customer Agent — analytics dashboard (dark mode), desktop">
+      <br><sub><b>Desktop</b> — KPIs · daily volume · intent breakdown · response-time distribution · channels · sentiment trend · live event stream</sub>
     </td>
     <td align="center" width="30%">
       <img src="docs/screenshot-mobile.webp" alt="AI Customer Agent — analytics dashboard, mobile">
-      <br><sub><b>Mobile</b> — same dashboard, on call</sub>
+      <br><sub><b>Mobile</b> — same dashboard, responsive</sub>
     </td>
   </tr>
 </table>
