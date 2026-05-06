@@ -117,30 +117,30 @@ DASHBOARD_HTML = """<!doctype html>
     <main class="max-w-7xl mx-auto px-5 lg:px-8 py-8 space-y-6">
 
       <!-- ============== KPI Row ============== -->
-      <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="card p-5">
-          <div class="text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Messages</div>
-          <div class="mt-2 flex items-baseline gap-2">
-            <div id="kpiMessages" class="text-3xl font-bold tabular-nums">—</div>
-            <div class="text-[11px] text-text-muted">last <span data-window>7d</span></div>
+      <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div class="card p-4 sm:p-5 min-w-0">
+          <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Messages</div>
+          <div class="mt-2 flex items-baseline gap-2 flex-wrap min-w-0">
+            <div id="kpiMessages" class="text-2xl sm:text-3xl font-bold tabular-nums truncate">—</div>
+            <div class="text-[11px] text-text-muted whitespace-nowrap">last <span data-window>7d</span></div>
           </div>
           <div class="mt-3 h-1 bg-ink-700 rounded overflow-hidden"><div id="bar-messages" class="h-full bg-accent-primary" style="width:0%"></div></div>
         </div>
 
-        <div class="card p-5">
-          <div class="text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Escalation rate</div>
-          <div class="mt-2 flex items-baseline gap-2">
-            <div id="kpiEscalation" class="text-3xl font-bold tabular-nums">—</div>
-            <div id="kpiEscalationDot" class="text-[11px] text-text-muted">target &lt; 15%</div>
+        <div class="card p-4 sm:p-5 min-w-0">
+          <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Escalation rate</div>
+          <div class="mt-2 flex items-baseline gap-2 flex-wrap min-w-0">
+            <div id="kpiEscalation" class="text-2xl sm:text-3xl font-bold tabular-nums truncate">—</div>
+            <div id="kpiEscalationDot" class="text-[10px] text-text-muted whitespace-nowrap">target &lt; 15%</div>
           </div>
           <div class="mt-3 h-1 bg-ink-700 rounded overflow-hidden"><div id="bar-escalation" class="h-full bg-accent-warn" style="width:0%"></div></div>
         </div>
 
-        <div class="card p-5">
-          <div class="text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Avg sentiment</div>
-          <div class="mt-2 flex items-baseline gap-2">
-            <div id="kpiSentiment" class="text-3xl font-bold tabular-nums">—</div>
-            <div id="kpiSentimentBadge" class="chip"></div>
+        <div class="card p-4 sm:p-5 min-w-0">
+          <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Avg sentiment</div>
+          <div class="mt-2 flex items-baseline gap-2 flex-wrap min-w-0">
+            <div id="kpiSentiment" class="text-2xl sm:text-3xl font-bold tabular-nums">—</div>
+            <div id="kpiSentimentBadge" class="chip whitespace-nowrap"></div>
           </div>
           <div class="mt-3 h-1 bg-ink-700 rounded relative overflow-hidden">
             <div class="absolute inset-y-0 left-1/2 w-px bg-line"></div>
@@ -148,14 +148,24 @@ DASHBOARD_HTML = """<!doctype html>
           </div>
         </div>
 
-        <div class="card p-5">
-          <div class="text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Response time</div>
-          <div class="mt-2 flex items-baseline gap-3">
-            <div><div class="text-3xl font-bold tabular-nums" id="kpiAvgMs">—</div><div class="text-[10px] text-text-muted">avg</div></div>
-            <div><div class="text-base font-semibold text-text-secondary tabular-nums" id="kpiP50">—</div><div class="text-[10px] text-text-muted">p50</div></div>
-            <div><div class="text-base font-semibold text-text-secondary tabular-nums" id="kpiP95">—</div><div class="text-[10px] text-text-muted">p95</div></div>
+        <!-- Response Time spans both mobile columns (3 numbers don't fit half-width) -->
+        <div class="card p-4 sm:p-5 col-span-2 lg:col-span-1 min-w-0">
+          <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Response time</div>
+          <div class="mt-2 flex items-end gap-4 sm:gap-3 flex-wrap">
+            <div class="min-w-0">
+              <div class="text-2xl sm:text-3xl font-bold tabular-nums leading-none" id="kpiAvgMs">—</div>
+              <div class="text-[10px] text-text-muted mt-1">avg</div>
+            </div>
+            <div class="min-w-0">
+              <div class="text-lg sm:text-base font-semibold text-text-secondary tabular-nums leading-none" id="kpiP50">—</div>
+              <div class="text-[10px] text-text-muted mt-1">p50</div>
+            </div>
+            <div class="min-w-0">
+              <div class="text-lg sm:text-base font-semibold text-text-secondary tabular-nums leading-none" id="kpiP95">—</div>
+              <div class="text-[10px] text-text-muted mt-1">p95</div>
+            </div>
           </div>
-          <div class="mt-3 text-[11px] text-text-muted">Lower is better · target p95 &lt; 4 s</div>
+          <div class="mt-3 text-[10px] text-text-muted">Lower is better · target p95 &lt; 4 s</div>
         </div>
       </section>
 
