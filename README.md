@@ -6,11 +6,18 @@ Built on the Gmail API, Intercom REST API, and Google Gemini, this project goes 
 
 The architecture is production-ready — containerized, channel-pluggable, with separated concerns for memory, retrieval, and analytics. It currently runs as a personal automation; the screenshot below is from the live analytics dashboard backed by anonymized event data.
 
-<p align="center">
-  <img src="docs/screenshot.webp" alt="Live analytics dashboard — message volume, escalation rate, sentiment, intent breakdown" width="900">
-  <br>
-  <sub>Analytics dashboard: message volume, escalation rate, sentiment trend, and intent breakdown.</sub>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="70%">
+      <img src="docs/screenshot.webp" alt="AI Customer Agent — analytics dashboard, desktop">
+      <br><sub><b>Desktop</b> — message volume, escalation rate, sentiment, intent breakdown</sub>
+    </td>
+    <td align="center" width="30%">
+      <img src="docs/screenshot-mobile.webp" alt="AI Customer Agent — analytics dashboard, mobile">
+      <br><sub><b>Mobile</b> — same dashboard, on call</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
